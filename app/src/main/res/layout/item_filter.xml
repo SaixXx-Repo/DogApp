@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="filter"
+            type="com.my.dogapp.model.Filter" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/item_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@{filter.isApplied ? @drawable/bg_rect_primary_50_rounded_20dp : @drawable/bg_rect_primary_rounded_20dp_stroke_2dp}"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp"
+        tools:background="@drawable/bg_rect_primary_rounded_20dp_stroke_2dp">
+
+        <TextView
+            android:id="@+id/iv_breed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{filter.name}"
+            android:textColor="@color/white"
+            tools:text="Filter Name" />
+
+    </RelativeLayout>
+</layout>

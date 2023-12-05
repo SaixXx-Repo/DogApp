@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_root"
+    app:startDestination="@id/breeds_fragment">
+
+
+    <fragment
+        android:id="@+id/breeds_fragment"
+        android:name="com.my.dogapp.fragment.BreedsFragment"
+        android:label="@string/title_breeds"
+        tools:layout="@layout/fragment_breeds">
+        <action
+            android:id="@+id/action_breeds_fragment_to_breed_post_fragment"
+            app:destination="@id/breed_post_fragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/favourite_fragment"
+        android:name="com.my.dogapp.fragment.FavouriteFragment"
+        android:label="@string/title_favourite"
+        tools:layout="@layout/fragment_favourite" />
+
+    <fragment
+        android:id="@+id/breed_post_fragment"
+        android:name="com.my.dogapp.fragment.BreedPostsFragment"
+        android:label="Breed Post Fragment"
+        tools:layout="@layout/fragment_breed_posts">
+        <argument
+            android:name="breedDto"
+            app:argType="com.my.dogapp.model.BreedDto"
+            app:nullable="false" />
+    </fragment>
+
+</navigation>
